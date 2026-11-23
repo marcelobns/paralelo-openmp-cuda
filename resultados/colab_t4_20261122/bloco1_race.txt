@@ -1,0 +1,80 @@
+$ make 2>&1
+gcc -O3 -march=native -fopenmp race.c -o race
+gcc -O3 -march=native -fopenmp saxpy_omp.c -o saxpy_omp
+
+$ OMP_NUM_THREADS=4 ./race
+threads=4
+sequencial (referencia) = 5999995
+parallel for (corrida)  = 2999992   <-- ERRADO
+com reduction           = 5999995   OK
+
+$ gcc -O3 -march=native -fopenmp -S race.c -o /content/resultados_colab/race_gcc.s
+
+$ ./naodet.sh
+10 execucoes identicas, 4 threads, mesmo binario:
+parallel for (corrida)  = 5999995   
+parallel for (corrida)  = 1499994   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 3000003   <-- ERRADO
+parallel for (corrida)  = 3000001   <-- ERRADO
+parallel for (corrida)  = 2999998   <-- ERRADO
+parallel for (corrida)  = 2999994   <-- ERRADO
+parallel for (corrida)  = 4499992   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+
+$ ./naodet.sh
+10 execucoes identicas, 4 threads, mesmo binario:
+parallel for (corrida)  = 4500001   <-- ERRADO
+parallel for (corrida)  = 4500001   <-- ERRADO
+parallel for (corrida)  = 4500001   <-- ERRADO
+parallel for (corrida)  = 4500001   <-- ERRADO
+parallel for (corrida)  = 4499992   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 4500001   <-- ERRADO
+parallel for (corrida)  = 2999998   <-- ERRADO
+parallel for (corrida)  = 1500000   <-- ERRADO
+
+$ ./naodet.sh
+10 execucoes identicas, 4 threads, mesmo binario:
+parallel for (corrida)  = 1500003   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 4500001   <-- ERRADO
+parallel for (corrida)  = 4500001   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999998   <-- ERRADO
+parallel for (corrida)  = 3000003   <-- ERRADO
+
+$ ./naodet.sh
+10 execucoes identicas, 4 threads, mesmo binario:
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 4500001   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 4500001   <-- ERRADO
+
+$ ./naodet.sh
+10 execucoes identicas, 4 threads, mesmo binario:
+parallel for (corrida)  = 2999998   <-- ERRADO
+parallel for (corrida)  = 5999995   
+parallel for (corrida)  = 4500001   <-- ERRADO
+parallel for (corrida)  = 1500003   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 4500001   <-- ERRADO
+parallel for (corrida)  = 4499992   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+parallel for (corrida)  = 2999997   <-- ERRADO
+
+
+50 execucoes, 4 threads: 48 erradas (96%)
+distribuicao (valor: vezes): 2999997: 22, 4500001: 11, 2999998: 4, 4499992: 3, 3000003: 2, 1500003: 2, 5999995: 2, 1500000: 1, 3000001: 1, 2999994: 1, 1499994: 1

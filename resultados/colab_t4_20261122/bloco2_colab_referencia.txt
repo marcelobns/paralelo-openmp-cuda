@@ -1,0 +1,24 @@
+$ echo "nproc = $(nproc)"
+nproc = 2
+
+$ for t in 1 2 4 8 16; do OMP_NUM_THREADS=$t ./saxpy_omp 50000000; done
+threads= 1  N=50000000  tempo=0.0372 s  16.11 GB/s  2.69 GFLOP/s  (y[0]=4.0)
+threads= 2  N=50000000  tempo=0.0386 s  15.54 GB/s  2.59 GFLOP/s  (y[0]=4.0)
+threads= 4  N=50000000  tempo=0.0456 s  13.16 GB/s  2.19 GFLOP/s  (y[0]=4.0)
+threads= 8  N=50000000  tempo=0.0479 s  12.53 GB/s  2.09 GFLOP/s  (y[0]=4.0)
+threads=16  N=50000000  tempo=0.0362 s  16.58 GB/s  2.76 GFLOP/s  (y[0]=4.0)
+
+$ for t in 1 2 4 8 16; do OMP_NUM_THREADS=$t ./saxpy_omp 50000000; done
+threads= 1  N=50000000  tempo=0.1196 s  5.02 GB/s  0.84 GFLOP/s  (y[0]=4.0)
+threads= 2  N=50000000  tempo=0.0611 s  9.82 GB/s  1.64 GFLOP/s  (y[0]=4.0)
+threads= 4  N=50000000  tempo=0.0541 s  11.09 GB/s  1.85 GFLOP/s  (y[0]=4.0)
+threads= 8  N=50000000  tempo=0.0616 s  9.73 GB/s  1.62 GFLOP/s  (y[0]=4.0)
+threads=16  N=50000000  tempo=0.0382 s  15.72 GB/s  2.62 GFLOP/s  (y[0]=4.0)
+
+$ for t in 1 2 4 8 16; do OMP_NUM_THREADS=$t ./saxpy_omp 50000000; done
+threads= 1  N=50000000  tempo=0.0369 s  16.26 GB/s  2.71 GFLOP/s  (y[0]=4.0)
+threads= 2  N=50000000  tempo=0.0441 s  13.60 GB/s  2.27 GFLOP/s  (y[0]=4.0)
+threads= 4  N=50000000  tempo=0.0349 s  17.17 GB/s  2.86 GFLOP/s  (y[0]=4.0)
+threads= 8  N=50000000  tempo=0.0345 s  17.38 GB/s  2.90 GFLOP/s  (y[0]=4.0)
+threads=16  N=50000000  tempo=0.0353 s  16.98 GB/s  2.83 GFLOP/s  (y[0]=4.0)
+

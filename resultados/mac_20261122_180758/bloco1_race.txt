@@ -1,0 +1,27 @@
+--- execucao unica, 4 threads (comando do roteiro) ---
+threads=4
+sequencial (referencia) = 5999995
+parallel for (corrida)  = 1500000   <-- ERRADO
+com reduction           = 5999995   OK
+--- 4 threads, 50 execucoes: 50 erradas ---  distribuicao dos valores:
+  33 1500003
+  10 1500000
+   6 1499998
+   1 1499994
+--- 10 threads, 50 execucoes: 50 erradas ---  distribuicao dos valores:
+   9 1200008
+   8 1200000
+   8 1199996
+   6 1199999
+   4 1200006
+   3 1199994
+   2 600006
+   2 599998
+   1 599997
+   1 599994
+   1 1200009
+   1 1200005
+   1 1200003
+   1 1200002
+   1 1200001
+   1 1199995

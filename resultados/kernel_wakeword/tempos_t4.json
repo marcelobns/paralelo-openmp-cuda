@@ -1,0 +1,121 @@
+{
+ "ambiente": {
+  "node": "24.18.1",
+  "v8": "13.6.233.17-node.50",
+  "arch": "arm64",
+  "ort_web": "1.27.0",
+  "cpus": 10,
+  "cpu_modelo": "unknown",
+  "mem_gb": 4.9,
+  "carga_1min_por_nucleo": 0.17,
+  "threads_ort": 4,
+  "wasm_simd": "padrão",
+  "alpine": "3.24.1"
+ },
+ "rodadas": 5,
+ "casos": {
+  "mel_janela": {
+   "n": 300,
+   "p50_ms": 0.5554,
+   "p95_ms": 1.0094,
+   "min_ms": 0.4852
+  },
+  "mel_incremental": {
+   "n": 300,
+   "p50_ms": 0.1243,
+   "p95_ms": 0.2613,
+   "min_ms": 0.0893
+  },
+  "embedding": {
+   "n": 300,
+   "p50_ms": 0.9284,
+   "p95_ms": 1.5057,
+   "min_ms": 0.8578
+  },
+  "classificador": {
+   "n": 300,
+   "p50_ms": 0.0217,
+   "p95_ms": 0.0412,
+   "min_ms": 0.0183
+  },
+  "mel_janela_int8": {
+   "n": 300,
+   "p50_ms": 1.4717,
+   "p95_ms": 2.7248,
+   "min_ms": 1.3071
+  },
+  "embedding_int8": {
+   "n": 300,
+   "p50_ms": 3.0427,
+   "p95_ms": 5.0746,
+   "min_ms": 2.7147
+  },
+  "classificador_int8": {
+   "n": 300,
+   "p50_ms": 0.0303,
+   "p95_ms": 0.045,
+   "min_ms": 0.026
+  },
+  "mel_incremental_b8": {
+   "n": 300,
+   "p50_ms": 0.572,
+   "p95_ms": 0.9513,
+   "min_ms": 0.5292
+  },
+  "mel_incremental_b32": {
+   "n": 50,
+   "p50_ms": 2.1946,
+   "p95_ms": 3.0754,
+   "min_ms": 2.0899
+  },
+  "embedding_b8": {
+   "n": 300,
+   "p50_ms": 6.3233,
+   "p95_ms": 8.9231,
+   "min_ms": 5.7363
+  },
+  "embedding_b32": {
+   "n": 50,
+   "p50_ms": 25.951,
+   "p95_ms": 39.7213,
+   "min_ms": 24.7576
+  },
+  "teto_matmul_1024": {
+   "n": 50,
+   "p50_ms": 15.9632,
+   "p95_ms": 20.4221,
+   "min_ms": 14.2016
+  },
+  "teto_add_4M": {
+   "n": 300,
+   "p50_ms": 3.7951,
+   "p95_ms": 6.6825,
+   "min_ms": 3.0143
+  }
+ },
+ "tetos": {
+  "matmul_gflops_p50": 134.52714042297285,
+  "matmul_gflops_max": 151.21420459666518,
+  "add_gbs_p50": 13.26227187689389,
+  "add_gbs_max": 16.697623992303352,
+  "js_saxpy_f32": {
+   "n": 33554432,
+   "p50_ms": 26.07813200000055,
+   "gbs_p50": 15.440261748808982,
+   "gbs_max": 16.514988263848796
+  },
+  "js_saxpy_f64": {
+   "n": 33554432,
+   "p50_ms": 55.313122999999905,
+   "gbs_p50": 14.559047190302406,
+   "gbs_max": 15.37467240064424
+  }
+ },
+ "cadeia": {
+  "atual_p50_ms": 1.5055,
+  "mel_incremental_p50_ms": 1.0744,
+  "int8_embedding_p50_ms": 3.6198,
+  "lote8_por_fluxo_ms": 0.8836125,
+  "lote32_por_fluxo_ms": 0.9012500000000001
+ }
+}

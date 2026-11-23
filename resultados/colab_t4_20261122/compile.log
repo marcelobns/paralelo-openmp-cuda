@@ -1,0 +1,2 @@
+$ nvcc -O3 -arch=sm_75 saxpy_cuda.cu -o saxpy_cuda 2>&1
+

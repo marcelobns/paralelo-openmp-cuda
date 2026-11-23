@@ -1,0 +1,6 @@
+1 worker(s):   16.2 fatorações/s (1.00x)  por worker 16.2-16.2
+2 worker(s):   26.8 fatorações/s (1.66x)  por worker 12.3-14.5
+4 worker(s):   52.6 fatorações/s (3.25x)  por worker 10.4-16.1
+6 worker(s):   70.4 fatorações/s (4.35x)  por worker 10.1-13.2
+zgemm 1024: tempo de CPU / parede = 1.00
+zgetrf 2000: tempo de CPU / parede = 1.00

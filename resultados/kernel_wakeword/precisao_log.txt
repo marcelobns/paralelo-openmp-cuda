@@ -1,0 +1,53 @@
+Aoede-0.wav    FP64 max 0.9986  FP32 0.9986
+Aoede-1.wav    FP64 max 0.0005  FP32 0.0005
+Aoede-2.wav    FP64 max 0.0006  FP32 0.0006
+Aoede-3.wav    FP64 max 0.0005  FP32 0.0005
+Aoede-4.wav    FP64 max 0.0014  FP32 0.0014
+Aoede-5.wav    FP64 max 0.0006  FP32 0.0006
+Charon-0.wav   FP64 max 0.9957  FP32 0.9957
+Charon-1.wav   FP64 max 0.0006  FP32 0.0006
+Charon-2.wav   FP64 max 0.0006  FP32 0.0006
+Charon-3.wav   FP64 max 0.0005  FP32 0.0005
+Charon-4.wav   FP64 max 0.0007  FP32 0.0007
+Charon-5.wav   FP64 max 0.0005  FP32 0.0005
+Fenrir-0.wav   FP64 max 0.9985  FP32 0.9985
+Fenrir-1.wav   FP64 max 0.0005  FP32 0.0005
+Fenrir-2.wav   FP64 max 0.0006  FP32 0.0006
+Fenrir-3.wav   FP64 max 0.0005  FP32 0.0005
+Fenrir-4.wav   FP64 max 0.0018  FP32 0.0018
+Fenrir-5.wav   FP64 max 0.0006  FP32 0.0006
+Kore-0.wav     FP64 max 0.9951  FP32 0.9951
+Kore-1.wav     FP64 max 0.0005  FP32 0.0005
+Kore-2.wav     FP64 max 0.0006  FP32 0.0006
+Kore-3.wav     FP64 max 0.0006  FP32 0.0006
+Kore-4.wav     FP64 max 0.0019  FP32 0.0019
+Kore-5.wav     FP64 max 0.0005  FP32 0.0005
+Leda-0.wav     FP64 max 0.9971  FP32 0.9971
+Leda-1.wav     FP64 max 0.0005  FP32 0.0005
+Leda-2.wav     FP64 max 0.0007  FP32 0.0007
+Leda-3.wav     FP64 max 0.0005  FP32 0.0005
+Leda-4.wav     FP64 max 0.0008  FP32 0.0008
+Leda-5.wav     FP64 max 0.0007  FP32 0.0007
+Orus-0.wav     FP64 max 0.9983  FP32 0.9983
+Orus-1.wav     FP64 max 0.0006  FP32 0.0006
+Orus-2.wav     FP64 max 0.0006  FP32 0.0006
+Orus-3.wav     FP64 max 0.0006  FP32 0.0006
+Orus-4.wav     FP64 max 0.0007  FP32 0.0007
+Orus-5.wav     FP64 max 0.0007  FP32 0.0007
+Puck-0.wav     FP64 max 0.9985  FP32 0.9985
+Puck-1.wav     FP64 max 0.0006  FP32 0.0006
+Puck-2.wav     FP64 max 0.0006  FP32 0.0006
+Puck-3.wav     FP64 max 0.0006  FP32 0.0006
+Puck-4.wav     FP64 max 0.0007  FP32 0.0007
+Puck-5.wav     FP64 max 0.0006  FP32 0.0006
+Zephyr-0.wav   FP64 max 0.9985  FP32 0.9985
+Zephyr-1.wav   FP64 max 0.0005  FP32 0.0005
+Zephyr-2.wav   FP64 max 0.0006  FP32 0.0006
+Zephyr-3.wav   FP64 max 0.0005  FP32 0.0005
+Zephyr-4.wav   FP64 max 0.0007  FP32 0.0007
+Zephyr-5.wav   FP64 max 0.0007  FP32 0.0007
+producao         vs FP64: max|Δscore| 2.32e-06  mediana 2.1e-08  passos com decisão diferente 0/3664  clipes {'vp': 8, 'fn': 0, 'fp': 0, 'vn': 40}
+mel_incremental  vs FP64: max|Δscore| 2.87e-03  mediana 2.6e-08  passos com decisão diferente 0/3664  clipes {'vp': 8, 'fn': 0, 'fp': 0, 'vn': 40}
+embedding_int8   vs FP64: max|Δscore| 1.85e-01  mediana 2.5e-06  passos com decisão diferente 2/3664  clipes {'vp': 8, 'fn': 0, 'fp': 0, 'vn': 40}
+tudo_int8        vs FP64: max|Δscore| 9.93e-01  mediana 1.4e-04  passos com decisão diferente 22/3664  clipes {'vp': 7, 'fn': 1, 'fp': 0, 'vn': 40}
+FP64: {'vp': 8, 'fn': 0, 'fp': 0, 'vn': 40}

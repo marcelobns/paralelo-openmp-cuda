@@ -1,0 +1,53 @@
+mel_janela             p50    1.3498 ms  p95    1.5763  min    1.2421  n=300
+mel_incremental        p50    0.1839 ms  p95    0.2273  min    0.1648  n=300
+embedding              p50     2.015 ms  p95     2.413  min    1.8458  n=300
+classificador          p50    0.0182 ms  p95    0.0266  min    0.0149  n=300
+mel_janela_int8        p50    3.3195 ms  p95    4.2861  min    3.0561  n=300
+embedding_int8         p50    5.7095 ms  p95    6.9543  min    5.2495  n=300
+classificador_int8     p50    0.0284 ms  p95    0.0365  min    0.0244  n=300
+mel_incremental_b8     p50    1.3512 ms  p95    1.6575  min    1.2012  n=300
+mel_incremental_b32    p50    5.1841 ms  p95    6.1808  min     4.751  n=50
+embedding_b8           p50   15.7735 ms  p95   20.8478  min   14.4446  n=300
+embedding_b32          p50   69.5292 ms  p95  104.7331  min   59.1185  n=50
+teto_matmul_1024       p50   42.3713 ms  p95   48.9848  min   38.6412  n=50
+teto_add_4M            p50    3.1141 ms  p95    5.7515  min    2.5042  n=300
+{
+ "tetos": {
+  "matmul_gflops_p50": 50.68250556390765,
+  "matmul_gflops_max": 55.574973033963744,
+  "add_gbs_p50": 16.16250216756045,
+  "add_gbs_max": 20.098893059659776,
+  "js_saxpy_f32": {
+   "n": 33554432,
+   "p50_ms": 22.374558999999863,
+   "gbs_p50": 17.996027720591158,
+   "gbs_max": 19.875846370423798
+  },
+  "js_saxpy_f64": {
+   "n": 33554432,
+   "p50_ms": 51.794260999999096,
+   "gbs_p50": 15.548177586702396,
+   "gbs_max": 16.146063679747353
+  }
+ },
+ "cadeia": {
+  "atual_p50_ms": 3.3830000000000005,
+  "mel_incremental_p50_ms": 2.2171000000000003,
+  "int8_embedding_p50_ms": 7.077500000000001,
+  "lote8_por_fluxo_ms": 2.1587875000000003,
+  "lote32_por_fluxo_ms": 2.3529906250000003
+ },
+ "ambiente": {
+  "node": "24.18.1",
+  "v8": "13.6.233.17-node.50",
+  "arch": "arm64",
+  "ort_web": "1.27.0",
+  "cpus": 10,
+  "cpu_modelo": "unknown",
+  "mem_gb": 4.9,
+  "carga_1min_por_nucleo": 0.12,
+  "threads_ort": 1,
+  "wasm_simd": "padrão",
+  "alpine": "3.24.1"
+ }
+}

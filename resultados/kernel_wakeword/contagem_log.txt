@@ -1,0 +1,10 @@
+mel_janela_1.2s        FLOP    63.62 M  pesos  1.09 MB  compulsório  1.18 MB  sem reuso   3.77 MB  AI 16.89–54.04  saída [1, 1, 117, 32]
+mel_incremental        FLOP     4.35 M  pesos  1.09 MB  compulsório  1.09 MB  sem reuso   1.27 MB  AI 3.41–3.98  saída [1, 1, 8, 32]
+mel_incremental_b8     FLOP    34.80 M  pesos  1.09 MB  compulsório  1.15 MB  sem reuso   2.59 MB  AI 13.42–30.37  saída [8, 1, 8, 32]
+mel_incremental_b32    FLOP   139.21 M  pesos  1.09 MB  compulsório  1.33 MB  sem reuso   7.12 MB  AI 19.56–104.88  saída [32, 1, 8, 32]
+embedding              FLOP    85.01 M  pesos  1.31 MB  compulsório  1.32 MB  sem reuso  10.41 MB  AI 8.16–64.27  saída [1, 1, 1, 96]
+embedding_b8           FLOP   680.10 M  pesos  1.31 MB  compulsório  1.39 MB  sem reuso  74.11 MB  AI 9.18–488.07  saída [8, 1, 1, 96]
+embedding_b32          FLOP  2720.42 M  pesos  1.31 MB  compulsório  1.64 MB  sem reuso 292.50 MB  AI 9.30–1662.71  saída [32, 1, 1, 96]
+classificador          FLOP     0.21 M  pesos  0.41 MB  compulsório  0.42 MB  sem reuso   0.44 MB  AI 0.47–0.49  saída [1, 1]
+cadeia_atual           FLOP   148.84 M  compulsório  2.92 MB  AI 10.18–51.01
+cadeia_mel_incremental FLOP    89.57 M  compulsório  2.83 MB  AI 7.39–31.61

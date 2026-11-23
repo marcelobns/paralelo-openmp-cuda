@@ -1,0 +1,1 @@
+  50 com reduction           = 5999995   OK

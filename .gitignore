@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+# auxiliares do LaTeX
+relatorio/*.aux
+relatorio/*.log
+relatorio/*.out
+relatorio/build.log
+# material da disciplina (roteiro e kit do professor): não vai para o repositório.
+# Para reproduzir, coloque o zip do kit em docs/ e descompacte em kit_pp/.
+docs/
+kit_pp/
+# os notebooks embutem o zip do kit; gere com colab/gerar_notebook.py
+colab/*.ipynb

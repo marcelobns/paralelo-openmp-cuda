@@ -1,0 +1,240 @@
+$ ./saxpy_cuda 100000000 1
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  175.098 ms   (4.6 GB/s no PCIe)
+  kernel  ( 1x) :    5.367 ms   (223.6 GB/s na memoria da GPU)
+  retorno  D->H :   91.938 ms   (4.4 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  272.404 ms
+  fracao gasta em transferencia: 98.0%
+
+  verificacao: y[0] = 4.0 (esperado 4.0)
+
+$ ./saxpy_cuda 100000000 50
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  172.288 ms   (4.6 GB/s no PCIe)
+  kernel  (50x) :  261.368 ms   (229.6 GB/s na memoria da GPU)
+  retorno  D->H :   91.185 ms   (4.4 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  524.841 ms
+  fracao gasta em transferencia: 50.2%
+
+  verificacao: y[0] = 102.0 (esperado 102.0)
+
+$ ./saxpy_cuda 100000000 1
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  180.961 ms   (4.4 GB/s no PCIe)
+  kernel  ( 1x) :    5.337 ms   (224.9 GB/s na memoria da GPU)
+  retorno  D->H :  103.135 ms   (3.9 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  289.433 ms
+  fracao gasta em transferencia: 98.2%
+
+  verificacao: y[0] = 4.0 (esperado 4.0)
+
+$ ./saxpy_cuda 100000000 50
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  180.356 ms   (4.4 GB/s no PCIe)
+  kernel  (50x) :  263.070 ms   (228.1 GB/s na memoria da GPU)
+  retorno  D->H :   94.606 ms   (4.2 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  538.032 ms
+  fracao gasta em transferencia: 51.1%
+
+  verificacao: y[0] = 102.0 (esperado 102.0)
+
+$ ./saxpy_cuda 100000000 1
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  215.336 ms   (3.7 GB/s no PCIe)
+  kernel  ( 1x) :    5.501 ms   (218.2 GB/s na memoria da GPU)
+  retorno  D->H :   94.100 ms   (4.3 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  314.937 ms
+  fracao gasta em transferencia: 98.3%
+
+  verificacao: y[0] = 4.0 (esperado 4.0)
+
+$ ./saxpy_cuda 100000000 50
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  173.849 ms   (4.6 GB/s no PCIe)
+  kernel  (50x) :  264.071 ms   (227.2 GB/s na memoria da GPU)
+  retorno  D->H :   92.834 ms   (4.3 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  530.753 ms
+  fracao gasta em transferencia: 50.2%
+
+  verificacao: y[0] = 102.0 (esperado 102.0)
+
+$ ./saxpy_cuda 100000000 1
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  171.603 ms   (4.7 GB/s no PCIe)
+  kernel  ( 1x) :    5.320 ms   (225.5 GB/s na memoria da GPU)
+  retorno  D->H :   90.900 ms   (4.4 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  267.824 ms
+  fracao gasta em transferencia: 98.0%
+
+  verificacao: y[0] = 4.0 (esperado 4.0)
+
+$ ./saxpy_cuda 100000000 50
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  170.892 ms   (4.7 GB/s no PCIe)
+  kernel  (50x) :  266.499 ms   (225.1 GB/s na memoria da GPU)
+  retorno  D->H :   91.340 ms   (4.4 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  528.732 ms
+  fracao gasta em transferencia: 49.6%
+
+  verificacao: y[0] = 102.0 (esperado 102.0)
+
+$ ./saxpy_cuda 100000000 1
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  169.556 ms   (4.7 GB/s no PCIe)
+  kernel  ( 1x) :    5.444 ms   (220.4 GB/s na memoria da GPU)
+  retorno  D->H :   91.897 ms   (4.4 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  266.897 ms
+  fracao gasta em transferencia: 98.0%
+
+  verificacao: y[0] = 4.0 (esperado 4.0)
+
+$ ./saxpy_cuda 100000000 50
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  173.210 ms   (4.6 GB/s no PCIe)
+  kernel  (50x) :  266.592 ms   (225.1 GB/s na memoria da GPU)
+  retorno  D->H :   91.389 ms   (4.4 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  531.192 ms
+  fracao gasta em transferencia: 49.8%
+
+  verificacao: y[0] = 102.0 (esperado 102.0)
+
+$ ./saxpy_cuda 100000000 1
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  173.042 ms   (4.6 GB/s no PCIe)
+  kernel  ( 1x) :    5.330 ms   (225.1 GB/s na memoria da GPU)
+  retorno  D->H :   90.751 ms   (4.4 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  269.123 ms
+  fracao gasta em transferencia: 98.0%
+
+  verificacao: y[0] = 4.0 (esperado 4.0)
+
+$ ./saxpy_cuda 100000000 50
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  171.321 ms   (4.7 GB/s no PCIe)
+  kernel  (50x) :  263.854 ms   (227.4 GB/s na memoria da GPU)
+  retorno  D->H :   93.267 ms   (4.3 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  528.443 ms
+  fracao gasta em transferencia: 50.1%
+
+  verificacao: y[0] = 102.0 (esperado 102.0)
+
+$ ./saxpy_cuda 100000000 1
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  172.010 ms   (4.7 GB/s no PCIe)
+  kernel  ( 1x) :    5.465 ms   (219.6 GB/s na memoria da GPU)
+  retorno  D->H :   91.140 ms   (4.4 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  268.615 ms
+  fracao gasta em transferencia: 98.0%
+
+  verificacao: y[0] = 4.0 (esperado 4.0)
+
+$ ./saxpy_cuda 100000000 50
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  173.289 ms   (4.6 GB/s no PCIe)
+  kernel  (50x) :  266.489 ms   (225.2 GB/s na memoria da GPU)
+  retorno  D->H :   99.453 ms   (4.0 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  539.230 ms
+  fracao gasta em transferencia: 50.6%
+
+  verificacao: y[0] = 102.0 (esperado 102.0)
+
+$ ./saxpy_cuda 100000000 1
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  182.560 ms   (4.4 GB/s no PCIe)
+  kernel  ( 1x) :    5.321 ms   (225.5 GB/s na memoria da GPU)
+  retorno  D->H :   98.499 ms   (4.1 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  286.379 ms
+  fracao gasta em transferencia: 98.1%
+
+  verificacao: y[0] = 4.0 (esperado 4.0)
+
+$ ./saxpy_cuda 100000000 50
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  175.335 ms   (4.6 GB/s no PCIe)
+  kernel  (50x) :  262.964 ms   (228.2 GB/s na memoria da GPU)
+  retorno  D->H :  100.397 ms   (4.0 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  538.696 ms
+  fracao gasta em transferencia: 51.2%
+
+  verificacao: y[0] = 102.0 (esperado 102.0)
+
+$ ./saxpy_cuda 100000000 1
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  177.814 ms   (4.5 GB/s no PCIe)
+  kernel  ( 1x) :    5.447 ms   (220.3 GB/s na memoria da GPU)
+  retorno  D->H :   91.480 ms   (4.4 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  274.741 ms
+  fracao gasta em transferencia: 98.0%
+
+  verificacao: y[0] = 4.0 (esperado 4.0)
+
+$ ./saxpy_cuda 100000000 50
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  178.472 ms   (4.5 GB/s no PCIe)
+  kernel  (50x) :  266.489 ms   (225.1 GB/s na memoria da GPU)
+  retorno  D->H :   92.255 ms   (4.3 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  537.215 ms
+  fracao gasta em transferencia: 50.4%
+
+  verificacao: y[0] = 102.0 (esperado 102.0)
+
+$ ./saxpy_cuda 100000000 1
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  177.375 ms   (4.5 GB/s no PCIe)
+  kernel  ( 1x) :    5.325 ms   (225.4 GB/s na memoria da GPU)
+  retorno  D->H :   92.683 ms   (4.3 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  275.383 ms
+  fracao gasta em transferencia: 98.1%
+
+  verificacao: y[0] = 4.0 (esperado 4.0)
+
+$ ./saxpy_cuda 100000000 50
+GPU: Tesla T4 | SMs=40 | cc 7.5 | memoria 15.6 GB
+
+  envio    H->D :  177.951 ms   (4.5 GB/s no PCIe)
+  kernel  (50x) :  266.431 ms   (225.2 GB/s na memoria da GPU)
+  retorno  D->H :   96.223 ms   (4.2 GB/s no PCIe)
+  ------------------------------------------
+  TOTAL         :  540.604 ms
+  fracao gasta em transferencia: 50.7%
+
+  verificacao: y[0] = 102.0 (esperado 102.0)
+

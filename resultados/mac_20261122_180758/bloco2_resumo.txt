@@ -1,0 +1,46 @@
+
+N = 50,000,000  (0.6 GB movidos por execucao)
+  threads  mediana GB/s      min      max    CV%  speedup
+        1          62.7     21.8     65.7   27.9    1.00x  (P)
+        2          91.5     66.5     98.2    8.6    1.46x  (P)
+        3         106.5     86.0    110.5    5.9    1.70x  (P)
+        4         110.8     72.5    118.1   10.7    1.77x  (P)
+        5         118.8     81.2    123.1   11.5    1.90x
+        6         119.3     92.4    124.0    8.6    1.90x
+        7         120.9     82.2    124.5   10.4    1.93x
+        8         121.3    110.8    126.1    3.0    1.93x
+        9         125.3    103.8    129.9    5.2    2.00x
+       10         126.8    116.8    128.6    2.6    2.02x
+       12         124.5    108.4    129.9    6.1    1.99x
+       16         124.7     92.9    128.0    9.1    1.99x
+  -> maior mediana: 126.8 GB/s com 10 threads (83% dos 153 GB/s anunciados)
+  -> saturacao (>= 95% da maior mediana): 7 threads
+  -> maior execucao individual: 129.9 GB/s
+  ATENCAO: 1 thread variou de 21.8 a 65.7 GB/s (bimodal?). Provavel alternancia entre nucleo P e E: use a mediana e cite a faixa.
+
+N = 200,000,000  (2.4 GB movidos por execucao)
+  threads  mediana GB/s      min      max    CV%  speedup
+        1          27.4     13.7     53.5   34.4    1.00x  (P)
+        2          47.8     21.3     92.3   41.0    1.74x  (P)
+        3          70.5     39.1    102.1   29.9    2.57x  (P)
+        4          95.1     42.9    112.8   30.5    3.47x  (P)
+        5          88.3     38.1    123.0   35.2    3.22x
+        6         100.2     40.6    125.2   27.1    3.66x
+        7          98.8     33.1    129.7   29.6    3.61x
+        8          82.4     27.4    128.4   39.9    3.01x
+        9          87.3     29.9    129.7   35.4    3.19x
+       10          96.5     39.2    129.1   32.0    3.52x
+       12         100.9     50.7    130.8   28.7    3.68x
+       16         101.8     43.3    130.0   28.1    3.72x
+  -> maior mediana: 101.8 GB/s com 16 threads (67% dos 153 GB/s anunciados)
+  -> saturacao (>= 95% da maior mediana): 6 threads
+  -> maior execucao individual: 130.8 GB/s
+  ATENCAO: 1 thread variou de 13.7 a 53.5 GB/s (bimodal?). Provavel alternancia entre nucleo P e E: use a mediana e cite a faixa.
+
+=== Linhas do Bloco 5 (N = 5e7, comando do roteiro) ===
+  Ponto de saturacao medido no OpenMP (threads): 7
+  Banda maxima observada na CPU (GB/s):          126.8 (mediana; pico individual 129.9)
+  Cuidado ao interpretar: ate 4 threads o ganho vem dos nucleos P; depois entram os
+  nucleos E, mais lentos, e o schedule static divide o laco em partes iguais. Um
+  plato logo apos 4 threads pode ser desbalanceamento, nao so banda de memoria.
+  Compare a maior mediana com os 153 GB/s teoricos para sustentar o argumento.

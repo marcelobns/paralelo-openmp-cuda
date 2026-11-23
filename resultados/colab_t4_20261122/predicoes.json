@@ -1,0 +1,7 @@
+{
+  "registrado_em": "2026-11-22T22:11:56.862841+00:00",
+  "P1 - race com 4 threads: (a) sempre correto (b) sempre errado (c) as vezes correto": "registrada pelo discente fora do notebook (ver relatorio)",
+  "P2 - SAXPY OpenMP escala ate: (a) esgotar nucleos (b) saturar banda (c) sempre": "registrada pelo discente fora do notebook (ver relatorio)",
+  "P3 - fracao do tempo em transferencia, N=1e8: (a) <10% (b) ~metade (c) >90%": "registrada pelo discente fora do notebook (ver relatorio)",
+  "P4 - em FP64, o que acontece? (texto livre)": "registrada pelo discente fora do notebook (ver relatorio)"
+}

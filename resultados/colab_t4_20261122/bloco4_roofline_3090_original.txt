@@ -1,0 +1,42 @@
+$ python3 roofline.py
+FP32 pico ........   35.58 TFLOP/s
+FP64 pico ........    0.56 TFLOP/s   (1/64 !)
+Banda de memoria .   936.2 GB/s
+
+Equilibrio da maquina (FLOP por byte para saturar a ALU):
+  FP32:   38.0 FLOP/byte
+  FP64:   0.59 FLOP/byte
+
+Kernels em FP32 (float):
+  SAXPY  y=a*x+y                     AI= 0.167  limite=   0.16 TF  ( 0.44% do pico)  MEMORIA
+  soma vetorial c=a+b                AI= 0.083  limite=   0.08 TF  ( 0.22% do pico)  MEMORIA
+  produto interno                    AI= 0.250  limite=   0.23 TF  ( 0.66% do pico)  MEMORIA
+  stencil 5 pontos                   AI= 0.750  limite=   0.70 TF  ( 1.97% do pico)  MEMORIA
+  matmul ingenuo (sem reuso)         AI= 0.250  limite=   0.23 TF  ( 0.66% do pico)  MEMORIA
+  matmul com tile 32x32              AI= 8.000  limite=   7.49 TF  (21.05% do pico)  MEMORIA
+
+Os MESMOS kernels em FP64 (double) - repare na inversao:
+  SAXPY  y=a*x+y                     AI= 0.083  limite=   0.08 TF  (14.03% do pico)  MEMORIA
+  stencil 5 pontos                   AI= 0.375  limite=   0.35 TF  (63.15% do pico)  MEMORIA
+  matmul com tile 32x32              AI= 4.000  limite=   0.56 TF  (100.00% do pico)  COMPUTO
+
+SAXPY com N=100,000,000 em FP32:
+  trafego minimo = 1.20 GB
+  tempo minimo   = 1.28 ms   (limitado pela memoria)
+  se fosse limitado pelo computo: 0.0056 ms
+  --> a memoria e 228x mais lenta que a ALU nesse kernel
+
+==============================================================
+ CUSTO DA TRANSFERENCIA PELO PCIe (o erro classico em CUDA)
+==============================================================
+  N=   1,000,000  transferencia=    0.50 ms   kernel= 0.013 ms   razao= 39.0x
+  N=  10,000,000  transferencia=    5.00 ms   kernel= 0.128 ms   razao= 39.0x
+  N= 100,000,000  transferencia=   50.00 ms   kernel= 1.282 ms   razao= 39.0x
+
+  Conclusao: para UMA operacao SAXPY, a GPU so compensa se o dado
+  ja estiver residente na memoria dela. Transferir para fazer 2 FLOP
+  por elemento e sempre um mau negocio.
+
+  Quantos FLOP por elemento sao necessarios para a transferencia
+  se pagar (ignorando a CPU)? 17791 FLOP/elemento
+

@@ -1,0 +1,59 @@
+{
+  "limiar": 0.5,
+  "n_clipes": 48,
+  "n_positivos": 8,
+  "producao": {
+    "passos": 3664,
+    "max_abs_dscore_vs_fp64": 2.3220509606791673e-06,
+    "mediana_abs_dscore": 2.0868096989328953e-08,
+    "passos_que_cruzam_limiar_diferente": 0,
+    "deteccao_por_clipe": {
+      "vp": 8,
+      "fn": 0,
+      "fp": 0,
+      "vn": 40
+    }
+  },
+  "mel_incremental": {
+    "passos": 3664,
+    "max_abs_dscore_vs_fp64": 0.00286888609139338,
+    "mediana_abs_dscore": 2.6267007941909457e-08,
+    "passos_que_cruzam_limiar_diferente": 0,
+    "deteccao_por_clipe": {
+      "vp": 8,
+      "fn": 0,
+      "fp": 0,
+      "vn": 40
+    }
+  },
+  "embedding_int8": {
+    "passos": 3664,
+    "max_abs_dscore_vs_fp64": 0.18546257572672165,
+    "mediana_abs_dscore": 2.5191815334963048e-06,
+    "passos_que_cruzam_limiar_diferente": 2,
+    "deteccao_por_clipe": {
+      "vp": 8,
+      "fn": 0,
+      "fp": 0,
+      "vn": 40
+    }
+  },
+  "tudo_int8": {
+    "passos": 3664,
+    "max_abs_dscore_vs_fp64": 0.9932472088159755,
+    "mediana_abs_dscore": 0.0001380653141913484,
+    "passos_que_cruzam_limiar_diferente": 22,
+    "deteccao_por_clipe": {
+      "vp": 7,
+      "fn": 1,
+      "fp": 0,
+      "vn": 40
+    }
+  },
+  "fp64_deteccao_por_clipe": {
+    "vp": 8,
+    "fn": 0,
+    "fp": 0,
+    "vn": 40
+  }
+}

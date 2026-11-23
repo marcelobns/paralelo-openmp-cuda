@@ -1,0 +1,10 @@
+perfil por frequência (ms): raster=1.2, montagem=3.2, construcao_S=2.0, splu=63.3, solucao=2.4, pos_processamento=0.3
+  splu = 89% do tempo por frequência (raster é 1x por amostra)
+fração dos FLOP nas últimas k colunas da LU: k=486: 29%, k=1000: 86%, k=2000: 97%, k=4000: 99%
+LU densa complexa 486x486 (zgetrf): 2.13 ms -> 143.9 GFLOP/s
+LU densa complexa 2000x2000: 250.7 GFLOP/s
+zgemm 512: 464  1024: 432 GFLOP/s (Accelerate, VECLIB_MAXIMUM_THREADS=1)
+
+precisão em 20 geometrias x 3 freq (60 casos): max|Δ|S|²| c64 = 2.0e-04 (mediana 3.1e-05), refinado = 1.1e-07; |Σ|S|²−1| em FP64 até 7.9e-03
+
+resultados: resultados/kernel_fdfd/kernel_fdfd_extra.json

@@ -1,0 +1,8 @@
+
+=== Bloco 5 (medido no Colab, Tesla T4) ===
+Ponto de saturacao medido no OpenMP (threads) ...... ver mac/coleta_mac.sh
+Banda maxima observada na CPU (GB/s) ............... ver mac/coleta_mac.sh
+Fracao do tempo em transferencia, N=1e8, 1 rep ..... 98.0%  (mediana de 5; faixa 98.0-98.3%)
+Fracao com 50 repeticoes ........................... 50.2%  (mediana de 5; faixa 49.8-50.6%)
+PCIe H->D medido ................................... 4.6 GB/s (memoria do host paginavel: malloc)
+Banda do kernel medida (50 rep) .................... 225.2 GB/s

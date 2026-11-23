@@ -1,0 +1,25 @@
+=== Ambiente da coleta (Mac) ===
+data ............ 2026-11-22 18:07:58 -0400
+macOS ........... macOS 27.2.1 (26B131)
+kernel .......... Darwin 27.2.0 arm64
+CPU ............. Apple M5
+nucleos logicos . 10
+nucleos P ....... 4 (Super)
+nucleos E ....... 6 (Efficiency)
+L2 por cluster P  16 MiB
+L2 por cluster E  6 MiB
+memoria ......... 16 GiB (unificada)
+energia ......... Now drawing from 'AC Power'
+compilador ...... Apple clang version 21.0.0 (clang-2100.4.1.1)
+libomp .......... libomp 23.1.5
+linha de compilacao: clang -O3 -mcpu=native -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include <fonte.c> -L/opt/homebrew/opt/libomp/lib -lomp -o <bin>
+(Makefile do kit: gcc -O3 -march=native -fopenmp)
+REPS=15  THREADS=1 2 3 4 5 6 7 8 9 10 12 16  N=50000000 200000000
+
+sha256 das fontes do kit usadas:
+b44842e9844b12aaafb007de97093aed05692a4812680d6cbf73d8f827192ea8  race.c
+f0850e02ce4970f9850bc67da384d32d5a91a696d2423786587ea03460cffa97  saxpy_omp.c
+
+Obs.: o macOS nao permite fixar threads em nucleos (sem OMP_PROC_BIND
+efetivo). O escalonador costuma por ate 4 threads nos nucleos P, mas
+isso nao e garantido.

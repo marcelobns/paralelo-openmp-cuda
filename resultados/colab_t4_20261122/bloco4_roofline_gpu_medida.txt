@@ -1,0 +1,44 @@
+$ python3 /content/roofline_gpu.py --gpu "Tesla T4" --sms 40 --pcie-medido 4.60 --kernel-bw-medido 225.2 --plot /content/resultados_colab/bloco4_roofline_gpu.png
+=== Roofline: Tesla T4 (FP32/banda de datasheet) ===
+FP32 pico ........    8.14 TFLOP/s  (2560 nucleos x 2 x 1.590 GHz)
+FP64 pico ........    0.25 TFLOP/s  (1/32 do FP32; fonte: Dell/Microway)
+Banda de memoria .   320.0 GB/s
+PCIe ............. 3.0 x16
+
+Equilibrio da maquina (FLOP por byte para saturar a ALU):
+  FP32:   25.4 FLOP/byte
+  FP64:   0.80 FLOP/byte
+
+Kernels em FP32 (float):
+  SAXPY  y=a*x+y                     AI= 0.167  limite=   0.05 TF  (  0.66% do pico)  MEMORIA
+  soma vetorial c=a+b                AI= 0.083  limite=   0.03 TF  (  0.33% do pico)  MEMORIA
+  produto interno                    AI= 0.250  limite=   0.08 TF  (  0.98% do pico)  MEMORIA
+  stencil 5 pontos                   AI= 0.750  limite=   0.24 TF  (  2.95% do pico)  MEMORIA
+  matmul ingenuo (sem reuso)         AI= 0.250  limite=   0.08 TF  (  0.98% do pico)  MEMORIA
+  matmul com tile 32x32              AI= 8.000  limite=   2.56 TF  ( 31.45% do pico)  MEMORIA
+
+Os MESMOS kernels em FP64 (double):
+  SAXPY  y=a*x+y                     AI= 0.083  limite=   0.03 TF  ( 10.48% do pico)  MEMORIA
+  stencil 5 pontos                   AI= 0.375  limite=   0.12 TF  ( 47.17% do pico)  MEMORIA
+  matmul com tile 32x32              AI= 4.000  limite=   0.25 TF  (100.00% do pico)  COMPUTO
+
+==================================================================
+ MODELO DO PCIe (3.0 x16, 12 GB/s supostos)
+==================================================================
+  N=1e8: transferencia= 100.00 ms  kernel= 3.750 ms  razao= 26.7x
+  fracao prevista em transferencia,  1 repeticao(oes):  96.4%
+  fracao prevista em transferencia, 50 repeticao(oes):  34.8%
+  FLOP/elemento para a transferencia se pagar: 8,141
+
+==================================================================
+ MODELO x MEDIDO
+==================================================================
+  PCIe medido (H->D)     4.6 GB/s =  38.3% do suposto
+  kernel medido        225.2 GB/s =  70.4% do pico de datasheet
+  com as taxas medidas: razao transferencia/kernel = 49.0x
+  fracao recalculada,  1 repeticao(oes):  98.0%
+  fracao recalculada, 50 repeticao(oes):  49.5%
+  FLOP/elemento para pagar a transferencia medida: 21,237
+
+Grafico: /content/resultados_colab/bloco4_roofline_gpu.png
+

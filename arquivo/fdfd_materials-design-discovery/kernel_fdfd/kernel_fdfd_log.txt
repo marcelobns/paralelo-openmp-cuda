@@ -1,0 +1,27 @@
+grade 501x501 = 251,001 nós | janela 14,824 nós
+
+[janela] f=92.5 GHz  n=14,824  nnz(S)=308,852  fill=3.8x  (pré-cálculo 11 s)
+  fatoração: 64.4 ms (faixa 62.8-66.5)  1.06 GFLOP  AI<= 35.9 FLOP/B  -> 16.47 GFLOP/s
+  solução 3 RHS: 2.41 ms  AI = 1.13 FLOP/B
+  complex64: fatoração 46.6 ms (1.38x)  erro rel. campo 3.4e-04 -> refinado 1.3e-07
+  max |Δ|S|²|: c64 1.2e-04  refinado 7.0e-08  (max Δ dB c64 2.84e-03)
+
+[janela] f=94.5 GHz  n=14,824  nnz(S)=308,852  fill=3.7x  (pré-cálculo 12 s)
+  fatoração: 63.3 ms (faixa 62.4-67.2)  1.04 GFLOP  AI<= 35.5 FLOP/B  -> 16.38 GFLOP/s
+  solução 3 RHS: 2.44 ms  AI = 1.13 FLOP/B
+  complex64: fatoração 45.2 ms (1.40x)  erro rel. campo 3.6e-05 -> refinado 1.4e-09
+  max |Δ|S|²|: c64 8.6e-06  refinado 1.9e-09  (max Δ dB c64 2.51e-04)
+
+[janela] f=96.5 GHz  n=14,824  nnz(S)=308,852  fill=3.8x  (pré-cálculo 12 s)
+  fatoração: 66.9 ms (faixa 63.8-73.6)  1.06 GFLOP  AI<= 36.1 FLOP/B  -> 15.87 GFLOP/s
+  solução 3 RHS: 2.52 ms  AI = 1.13 FLOP/B
+  complex64: fatoração 46.5 ms (1.44x)  erro rel. campo 1.1e-04 -> refinado 1.2e-08
+  max |Δ|S|²|: c64 2.2e-05  refinado 3.6e-08  (max Δ dB c64 1.79e-03)
+
+[grade inteira] n=251,001  nnz(A)=1,253,485  fill=15.3x
+  fatoração: 1.19 s  27.1 GFLOP  AI<= 66.4 FLOP/B  -> 22.67 GFLOP/s
+  complex64: 0.84 s (1.42x)  erro rel. 5.9e-05 -> refinado 3.5e-09
+
+teto prático 1 thread: zgemm 436.9 GFLOP/s | cgemm 1769.9 GFLOP/s
+
+resultados: resultados/kernel_fdfd/kernel_fdfd.json
